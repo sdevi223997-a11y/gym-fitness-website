@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Titan Fitness Club - Built by Vivek</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background: #0b0d10; color: #f8fafc; line-height: 1.6; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 24px; background: #12151c; border-bottom: 1px solid #1e293b; position: sticky; top: 0; z-index: 100; }
+    .logo { font-size: 20px; font-weight: 800; color: #facc15; letter-spacing: 0.5px; }
+    .nav-btn { background: #facc15; color: #000; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 14px; }
+    .hero { text-align: center; padding: 60px 20px; background: radial-gradient(circle at top, #1e293b 0%, #0b0d10 70%); }
+    .hero h1 { font-size: 34px; font-weight: 800; margin-bottom: 12px; color: #fff; }
+    .hero h1 span { color: #facc15; }
+    .hero p { color: #94a3b8; max-width: 520px; margin: 0 auto 24px auto; font-size: 15px; }
+    .cta-btn { background: #facc15; color: #000; padding: 14px 28px; border: none; border-radius: 10px; font-size: 16px; font-weight: 800; cursor: pointer; }
+    .section { max-width: 960px; margin: 0 auto; padding: 40px 20px; }
+    .sec-title { text-align: center; font-size: 24px; font-weight: 800; margin-bottom: 24px; color: #facc15; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+    .card { background: #141820; border: 1px solid #262d3d; border-radius: 16px; padding: 24px; text-align: center; }
+    .price { font-size: 30px; font-weight: 800; color: #facc15; margin: 10px 0; }
+    .card ul { list-style: none; color: #cbd5e1; font-size: 14px; margin: 15px 0; }
+    .card ul li { margin-bottom: 8px; }
+    .bmi-box { background: #141820; border: 1px solid #262d3d; border-radius: 16px; padding: 24px; max-width: 440px; margin: 0 auto; }
+    .bmi-box input { width: 100%; padding: 12px; margin: 8px 0 14px 0; border-radius: 8px; border: 1px solid #334155; background: #0b0d10; color: #fff; font-size: 15px; }
+    .bmi-res { margin-top: 15px; font-weight: 700; text-align: center; color: #4ade80; font-size: 16px; }
+    .form-box { background: #141820; border: 1px solid #facc15; border-radius: 16px; padding: 24px; max-width: 440px; margin: 0 auto; }
+    .form-box input, .form-box select { width: 100%; padding: 12px; margin-bottom: 12px; border-radius: 8px; border: 1px solid #334155; background: #0b0d10; color: #fff; font-size: 15px; }
+    .wa-btn { background: #22c55e; color: #fff; width: 100%; padding: 13px; border: none; border-radius: 8px; font-size: 16px; font-weight: 700; cursor: pointer; }
+    footer { text-align: center; padding: 24px; border-top: 1px solid #1e293b; color: #64748b; font-size: 13px; margin-top: 30px; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">💪 TITAN FITNESS</div>
+    <a href="#trial" class="nav-btn">Free Trial</a>
+  </nav>
+
+  <section class="hero">
+    <h1>Transform Your Body With <span>Pro Coaching</span></h1>
+    <p>Modern strength equipment, cardio zone, and personalized diet & workout guidance. Open 5:00 AM – 10:00 PM daily.</p>
+    <a href="#trial"><button class="cta-btn">🔥 Book 3-Day Free Trial</button></a>
+  </section>
+
+  <section class="section">
+    <h2 class="sec-title">Membership Plans</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Monthly Plan</h3>
+        <div class="price">₹1,200</div>
+        <ul>
+          <li>✅ Full Gym & Cardio Access</li>
+          <li>✅ General Trainer Support</li>
+          <li>✅ Locker Facility</li>
+        </ul>
+      </div>
+      <div class="card" style="border-color: #facc15;">
+        <h3>Quarterly Plan (Popular)</h3>
+        <div class="price">₹3,000</div>
+        <ul>
+          <li>✅ Everything in Monthly</li>
+          <li>✅ Basic Diet Consultation</li>
+          <li>✅ Body Fat Checkup</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Yearly Transformation</h3>
+        <div class="price">₹9,999</div>
+        <ul>
+          <li>✅ 12 Months Unlimited Access</li>
+          <li>✅ Custom Workout Plan</li>
+          <li>✅ Priority Support</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="sec-title">Interactive BMI Calculator</h2>
+    <div class="bmi-box">
+      <label>Weight (kg)</label>
+      <input type="number" id="wt" placeholder="e.g. 65">
+      <label>Height (cm)</label>
+      <input type="number" id="ht" placeholder="e.g. 172">
+      <button class="cta-btn" style="width:100%;" onclick="calcBMI()">Calculate My BMI</button>
+      <div class="bmi-res" id="bmiOut"></div>
+    </div>
+  </section>
+
+  <section class="section" id="trial">
+    <h2 class="sec-title">Book Your Free Trial</h2>
+    <div class="form-box">
+      <input type="text" id="cName" placeholder="Your Full Name">
+      <select id="cGoal">
+        <option value="Muscle Gain">Goal: Muscle Gain & Strength</option>
+        <option value="Fat Loss">Goal: Weight & Fat Loss</option>
+        <option value="General Fitness">Goal: General Fitness</option>
+      </select>
+      <button class="wa-btn" onclick="bookTrial()">📲 Send Request on WhatsApp</button>
+    </div>
+  </section>
+
+  <footer>Built by Vivek 🚀 | Web & AI Developer Portfolio Project</footer>
+
+  <script>
+    function calcBMI() {
+      let w = parseFloat(document.getElementById('wt').value);
+      let h = parseFloat(document.getElementById('ht').value) / 100;
+      if (!w || !h) { document.getElementById('bmiOut').innerText = "Please enter valid weight and height."; return; }
+      let bmi = (w / (h * h)).toFixed(1);
+      let status = bmi < 18.5 ? "Underweight" : bmi < 25 ? "Healthy Weight ✅" : bmi < 30 ? "Overweight" : "Obese";
+      document.getElementById('bmiOut').innerText = "Your BMI: " + bmi + " (" + status + ")";
+    }
+    function bookTrial() {
+      let name = document.getElementById('cName').value.trim() || "New Member";
+      let goal = document.getElementById('cGoal').value;
+      let msg = "Hi Titan Fitness! My name is " + name + ". I want to book a 3-Day Free Trial for " + goal + ".";
+      window.open("https://whatsapp.com" + encodeURIComponent(msg), "_blank");
+    }
+  </script>
+</body>
+</html>
+
