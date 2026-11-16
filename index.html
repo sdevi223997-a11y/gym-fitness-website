@@ -43,7 +43,7 @@
     <h2 class="sec-title">🤖 Live AI Fitness & Diet Coach</h2>
     <div class="box" style="border-color: #facc15;">
       <label>Step 1: Paste Your Gemini API Key</label>
-      <input type="password" id="apiKey" placeholder="Paste your AIzaSy... API Key here">
+      <input type="password" id="apiKey" placeholder="Paste your AQ.Ab8... API Key here">
       <label>Step 2: Ask Anything (Diet, Muscle Gain, Fat Loss)</label>
       <textarea id="userPrompt" rows="3" placeholder="Example: Mera weight 60kg hai, muscle gain ke liye 1 din ka desi diet plan batao."></textarea>
       <button class="cta-btn" style="width:100%;" onclick="askGeminiAI()">✨ Get AI Diet & Workout Plan</button>
@@ -112,17 +112,20 @@
       outBox.innerText = "⏳ AI Coach is thinking... Please wait...";
 
       try {
-        const url = "https://googleapis.com" + encodeURIComponent(key);
+        const url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent";
         const response = await fetch(url, {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: {
+            "Content-Type": "application/json",
+            "x-goog-api-key": key
+          },
           body: JSON.stringify({
             contents: [{ parts: [{ text: "You are a helpful Indian Gym & Fitness Coach. Keep the answer short, practical, and easy to understand in Hindi/Hinglish: " + prompt }] }]
           })
         });
         const data = await response.json();
         if (data.candidates && data.candidates.length > 0) {
-          outBox.innerText = data.candidates[0].content.parts[0].text;
+          outBox.innerText = data.candidates.content.parts.text;
         } else {
           outBox.innerText = "❌ API Message: " + (data.error ? data.error.message : "Please check your API Key.");
         }
