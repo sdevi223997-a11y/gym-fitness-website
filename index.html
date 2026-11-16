@@ -112,7 +112,8 @@
       outBox.innerText = "⏳ AI Coach is thinking... Please wait...";
 
       try {
-        const response = await fetch(`https://googleapis.com{key}`, {
+        const url = "https://googleapis.com" + encodeURIComponent(key);
+        const response = await fetch(url, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -120,13 +121,13 @@
           })
         });
         const data = await response.json();
-        if (data.candidates && data.candidates[0]) {
+        if (data.candidates && data.candidates.length > 0) {
           outBox.innerText = data.candidates[0].content.parts[0].text;
         } else {
-          outBox.innerText = "❌ Error: " + (data.error ? data.error.message : "Invalid API Key or network issue.");
+          outBox.innerText = "❌ API Message: " + (data.error ? data.error.message : "Please check your API Key.");
         }
       } catch (err) {
-        outBox.innerText = "❌ Network Error: Please check your internet connection.";
+        outBox.innerText = "❌ Error Details: " + err.message;
       }
     }
 
@@ -148,4 +149,3 @@
   </script>
 </body>
 </html>
-
