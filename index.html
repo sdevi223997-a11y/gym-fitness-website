@@ -3,44 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Titan Fitness Club - Built by Vivek</title>
+  <title>Titan Fitness AI Club - Built by Vivek</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
     body { background: #0b0d10; color: #f8fafc; line-height: 1.6; }
     nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 24px; background: #12151c; border-bottom: 1px solid #1e293b; position: sticky; top: 0; z-index: 100; }
-    .logo { font-size: 20px; font-weight: 800; color: #facc15; letter-spacing: 0.5px; }
+    .logo { font-size: 20px; font-weight: 800; color: #facc15; }
     .nav-btn { background: #facc15; color: #000; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 14px; }
-    .hero { text-align: center; padding: 60px 20px; background: radial-gradient(circle at top, #1e293b 0%, #0b0d10 70%); }
-    .hero h1 { font-size: 34px; font-weight: 800; margin-bottom: 12px; color: #fff; }
+    .hero { text-align: center; padding: 55px 20px; background: radial-gradient(circle at top, #1e293b 0%, #0b0d10 70%); }
+    .hero h1 { font-size: 32px; font-weight: 800; margin-bottom: 12px; }
     .hero h1 span { color: #facc15; }
     .hero p { color: #94a3b8; max-width: 520px; margin: 0 auto 24px auto; font-size: 15px; }
     .cta-btn { background: #facc15; color: #000; padding: 14px 28px; border: none; border-radius: 10px; font-size: 16px; font-weight: 800; cursor: pointer; }
-    .section { max-width: 960px; margin: 0 auto; padding: 40px 20px; }
-    .sec-title { text-align: center; font-size: 24px; font-weight: 800; margin-bottom: 24px; color: #facc15; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
-    .card { background: #141820; border: 1px solid #262d3d; border-radius: 16px; padding: 24px; text-align: center; }
-    .price { font-size: 30px; font-weight: 800; color: #facc15; margin: 10px 0; }
-    .card ul { list-style: none; color: #cbd5e1; font-size: 14px; margin: 15px 0; }
-    .card ul li { margin-bottom: 8px; }
-    .bmi-box { background: #141820; border: 1px solid #262d3d; border-radius: 16px; padding: 24px; max-width: 440px; margin: 0 auto; }
-    .bmi-box input { width: 100%; padding: 12px; margin: 8px 0 14px 0; border-radius: 8px; border: 1px solid #334155; background: #0b0d10; color: #fff; font-size: 15px; }
-    .bmi-res { margin-top: 15px; font-weight: 700; text-align: center; color: #4ade80; font-size: 16px; }
-    .form-box { background: #141820; border: 1px solid #facc15; border-radius: 16px; padding: 24px; max-width: 440px; margin: 0 auto; }
-    .form-box input, .form-box select { width: 100%; padding: 12px; margin-bottom: 12px; border-radius: 8px; border: 1px solid #334155; background: #0b0d10; color: #fff; font-size: 15px; }
+    .section { max-width: 960px; margin: 0 auto; padding: 36px 20px; }
+    .sec-title { text-align: center; font-size: 24px; font-weight: 800; margin-bottom: 20px; color: #facc15; }
+    .box { background: #141820; border: 1px solid #262d3d; border-radius: 16px; padding: 24px; max-width: 520px; margin: 0 auto; }
+    .box input, .box select, .box textarea { width: 100%; padding: 12px; margin: 8px 0 14px 0; border-radius: 8px; border: 1px solid #334155; background: #0b0d10; color: #fff; font-size: 14px; }
+    .ai-output { margin-top: 16px; background: #0b0d10; border: 1px dashed #facc15; border-radius: 10px; padding: 14px; font-size: 14px; color: #e2e8f0; white-space: pre-wrap; display: none; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; }
+    .card { background: #141820; border: 1px solid #262d3d; border-radius: 16px; padding: 22px; text-align: center; }
+    .price { font-size: 28px; font-weight: 800; color: #facc15; margin: 10px 0; }
     .wa-btn { background: #22c55e; color: #fff; width: 100%; padding: 13px; border: none; border-radius: 8px; font-size: 16px; font-weight: 700; cursor: pointer; }
     footer { text-align: center; padding: 24px; border-top: 1px solid #1e293b; color: #64748b; font-size: 13px; margin-top: 30px; }
   </style>
 </head>
 <body>
   <nav>
-    <div class="logo">💪 TITAN FITNESS</div>
-    <a href="#trial" class="nav-btn">Free Trial</a>
+    <div class="logo">💪 TITAN FITNESS AI</div>
+    <a href="#ai-coach" class="nav-btn">AI Coach</a>
   </nav>
 
   <section class="hero">
-    <h1>Transform Your Body With <span>Pro Coaching</span></h1>
-    <p>Modern strength equipment, cardio zone, and personalized diet & workout guidance. Open 5:00 AM – 10:00 PM daily.</p>
-    <a href="#trial"><button class="cta-btn">🔥 Book 3-Day Free Trial</button></a>
+    <h1>Transform Your Body With <span>AI & Pro Coaching</span></h1>
+    <p>Ask our Live Gemini AI Fitness Coach for instant diet & workout plans, check your BMI, or book a 3-day free trial.</p>
+    <a href="#ai-coach"><button class="cta-btn">🤖 Ask AI Fitness Coach</button></a>
+  </section>
+
+  <section class="section" id="ai-coach">
+    <h2 class="sec-title">🤖 Live AI Fitness & Diet Coach</h2>
+    <div class="box" style="border-color: #facc15;">
+      <label>Step 1: Paste Your Gemini API Key</label>
+      <input type="password" id="apiKey" placeholder="Paste your AIzaSy... API Key here">
+      <label>Step 2: Ask Anything (Diet, Muscle Gain, Fat Loss)</label>
+      <textarea id="userPrompt" rows="3" placeholder="Example: Mera weight 60kg hai, muscle gain ke liye 1 din ka desi diet plan batao."></textarea>
+      <button class="cta-btn" style="width:100%;" onclick="askGeminiAI()">✨ Get AI Diet & Workout Plan</button>
+      <div class="ai-output" id="aiResult"></div>
+    </div>
   </section>
 
   <section class="section">
@@ -49,48 +57,36 @@
       <div class="card">
         <h3>Monthly Plan</h3>
         <div class="price">₹1,200</div>
-        <ul>
-          <li>✅ Full Gym & Cardio Access</li>
-          <li>✅ General Trainer Support</li>
-          <li>✅ Locker Facility</li>
-        </ul>
+        <p>Full Gym & Cardio Access + General Trainer</p>
       </div>
       <div class="card" style="border-color: #facc15;">
-        <h3>Quarterly Plan (Popular)</h3>
+        <h3>Quarterly (Popular)</h3>
         <div class="price">₹3,000</div>
-        <ul>
-          <li>✅ Everything in Monthly</li>
-          <li>✅ Basic Diet Consultation</li>
-          <li>✅ Body Fat Checkup</li>
-        </ul>
+        <p>Gym Access + AI Diet Plan + Body Checkup</p>
       </div>
       <div class="card">
-        <h3>Yearly Transformation</h3>
+        <h3>Yearly Pro</h3>
         <div class="price">₹9,999</div>
-        <ul>
-          <li>✅ 12 Months Unlimited Access</li>
-          <li>✅ Custom Workout Plan</li>
-          <li>✅ Priority Support</li>
-        </ul>
+        <p>12 Months Access + Personal Workout Coaching</p>
       </div>
     </div>
   </section>
 
   <section class="section">
     <h2 class="sec-title">Interactive BMI Calculator</h2>
-    <div class="bmi-box">
+    <div class="box">
       <label>Weight (kg)</label>
       <input type="number" id="wt" placeholder="e.g. 65">
       <label>Height (cm)</label>
       <input type="number" id="ht" placeholder="e.g. 172">
       <button class="cta-btn" style="width:100%;" onclick="calcBMI()">Calculate My BMI</button>
-      <div class="bmi-res" id="bmiOut"></div>
+      <div id="bmiOut" style="margin-top:14px; font-weight:700; text-align:center; color:#4ade80;"></div>
     </div>
   </section>
 
   <section class="section" id="trial">
     <h2 class="sec-title">Book Your Free Trial</h2>
-    <div class="form-box">
+    <div class="box">
       <input type="text" id="cName" placeholder="Your Full Name">
       <select id="cGoal">
         <option value="Muscle Gain">Goal: Muscle Gain & Strength</option>
@@ -104,6 +100,36 @@
   <footer>Built by Vivek 🚀 | Web & AI Developer Portfolio Project</footer>
 
   <script>
+    async function askGeminiAI() {
+      const key = document.getElementById('apiKey').value.trim();
+      const prompt = document.getElementById('userPrompt').value.trim();
+      const outBox = document.getElementById('aiResult');
+
+      if (!key) { alert("Please paste your Gemini API Key in Step 1 first!"); return; }
+      if (!prompt) { alert("Please write your fitness question in Step 2!"); return; }
+
+      outBox.style.display = "block";
+      outBox.innerText = "⏳ AI Coach is thinking... Please wait...";
+
+      try {
+        const response = await fetch(`https://googleapis.com{key}`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            contents: [{ parts: [{ text: "You are a helpful Indian Gym & Fitness Coach. Keep the answer short, practical, and easy to understand in Hindi/Hinglish: " + prompt }] }]
+          })
+        });
+        const data = await response.json();
+        if (data.candidates && data.candidates[0]) {
+          outBox.innerText = data.candidates[0].content.parts[0].text;
+        } else {
+          outBox.innerText = "❌ Error: " + (data.error ? data.error.message : "Invalid API Key or network issue.");
+        }
+      } catch (err) {
+        outBox.innerText = "❌ Network Error: Please check your internet connection.";
+      }
+    }
+
     function calcBMI() {
       let w = parseFloat(document.getElementById('wt').value);
       let h = parseFloat(document.getElementById('ht').value) / 100;
@@ -112,11 +138,12 @@
       let status = bmi < 18.5 ? "Underweight" : bmi < 25 ? "Healthy Weight ✅" : bmi < 30 ? "Overweight" : "Obese";
       document.getElementById('bmiOut').innerText = "Your BMI: " + bmi + " (" + status + ")";
     }
+
     function bookTrial() {
       let name = document.getElementById('cName').value.trim() || "New Member";
       let goal = document.getElementById('cGoal').value;
       let msg = "Hi Titan Fitness! My name is " + name + ". I want to book a 3-Day Free Trial for " + goal + ".";
-      window.open("https://whatsapp.com" + encodeURIComponent(msg), "_blank");
+      window.open("https://wa.me" + encodeURIComponent(msg), "_blank");
     }
   </script>
 </body>
